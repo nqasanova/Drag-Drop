@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    cursor: move;
+}
+
+#DragArea{
+    width: 80%;
+    margin: 50px auto 0;
+    height: 200px;
+    border: 3px solid red;
+    box-shadow: 1px 0 10px red inset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.item{
+    width: 23%;
+    height: 100px;
+    background-color: red;
+    cursor: move;
+}
+
+#DropArea{
+    width: 80%;
+    margin: 50px auto 0;
+    height: 200px;
+    border: 3px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 1px 0 10px red inset;
+    animation: border 1s linear infinite;
+    position: relative;
+    transition: 1s;
+}
+
+#DropArea i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.695);
+    animation: icon 1s linear infinite;
+    opacity: 0;
+    transition: .5s;
+}
+
+@keyframes icon{
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes border{
+    from {
+        border: 3px solid red;
+    }
+    to {
+        border: 3px solid rgba(255, 0, 0, 0.286);
+    }
+}
